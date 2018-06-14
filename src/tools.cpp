@@ -54,26 +54,28 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
     * Calculate a Jacobian here.
   */
 // Code from lectures quizes
+
+  MatrixXd Hj(3,4);
+  // Deal with the special case problems
+  Hj << 0,0,0,0,
+        0,0,0,0,
+        0,0,0,0;
+  
   float px = x_state(0);
   float py = x_state(1);
   float vx = x_state(2);
   float vy = x_state(3);
-  MatrixXd Hj(3,4);
-  // Deal with the special case problems
-  if (fabs(px) < EPS and fabs(py) < EPS){
-	  px = EPS;
-	  py = EPS;
-  }
+
   // Pre-compute a set of terms to avoid repeated calculation
   float c1 = px*px+py*py;
+  float c2 = sqrt(c1);
+  float c3 = (c1*c2);
   // Check division by zero
-  if(fabs(c1) < EPS2){
-	   std::cout << "Devide by Zero error!" << std::endl;
+  if(fabs(c1) < 0.0001){
+     std::cout << "Devide by Zero error!" << std::endl;
      return Hj;
      //c1 = EPS2;
   }
-  float c2 = sqrt(c1);
-  float c3 = (c1*c2);
   // Compute the Jacobian matrix
   Hj << (px/c2), (py/c2), 0, 0,
        -(py/c1), (px/c1), 0, 0,

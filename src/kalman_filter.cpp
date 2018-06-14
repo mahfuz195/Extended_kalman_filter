@@ -6,6 +6,8 @@ using Eigen::VectorXd;
 // Please note that the Eigen library does not initialize 
 // VectorXd or MatrixXd objects with zeros upon creation.
 
+const float DoublePI = 2 * M_PI;
+
 KalmanFilter::KalmanFilter() {}
 
 KalmanFilter::~KalmanFilter() {}
@@ -47,12 +49,25 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   */
   double rho = sqrt(x_(0) * x_(0) + x_(1) * x_(1));
   double theta = atan2(x_(1) , x_(0));
+  
+  if(rho < 0.000001)
+    rho = 0.000001;
+
   double rho_dot = ( x_(0) * x_(2) + x_(1) * x_(3))/rho;
 
   VectorXd h = VectorXd(3);
-  h<< rho , theta , rho_dot ; 
+  h << rho , theta , rho_dot ; 
 
   VectorXd y = z - h; 
+
+// normalize the angle between -pi to pi
+  while(y(1) > M_PI){
+    y(1) -= DoublePI;
+  }
+
+  while(y(1) < -M_PI){
+    y(1) += DoublePI;
+  }
 
   KF(y);
 }
