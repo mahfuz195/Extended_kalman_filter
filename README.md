@@ -20,11 +20,11 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 After implementing the Extended Kalman Filter I got the following results on dataset 1: 
 ---
 
-1. Result on Dataset 1
+#### 1. Result on Dataset 1
 
 ![alt text](result_2.PNG)
 
-1. Result on Dataset 2
+#### 2. Result on Dataset 2
 
 ![alt text](result_3.PNG)
 
