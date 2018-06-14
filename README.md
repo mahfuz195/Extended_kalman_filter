@@ -37,7 +37,7 @@ px, py, vx, vy output coordinates have have an RMSE <= [.11, .11, 0.52, 0.52]. w
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
-## Basic Build Instructions
+## Build and Run the project
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
