@@ -16,7 +16,7 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 5. ./ExtendedKF
 
 ### Results
-![alt text](result_1.PNG)
+![alt text](result_2.PNG)
 
 ---
 
