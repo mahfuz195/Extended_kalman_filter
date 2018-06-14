@@ -17,7 +17,8 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 
 ### Results
 
-After implementing the Extended Kalman Filter I got the following results on dataset 1: 
+After implementing the Extended Kalman Filter I got the following results on dataset 1 and 2: 
+
 ---
 
 #### 1. Result on Dataset 1
