@@ -16,9 +16,13 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 5. ./ExtendedKF
 
 ### Results
+---
+
 ![alt text](result_2.PNG)
 
 ---
+
+px, py, vx, vy output coordinates have have an RMSE <= [.11, .11, 0.52, 0.52]. which satisfy the requirments of project rubric.
 
 ## Other Important Dependencies
 
